@@ -66,6 +66,22 @@ class TaskController {
 
 
   }
+  async listAll(req, res) {
+    try {
+        const tasks = await Task.findAll({
+            where: { user_id: req.user_id }, // Busca todas as tarefas do usuário autenticado
+        });
+
+        if (!tasks || tasks.length === 0) {
+            return res.status(404).json({ message: 'Nenhuma tarefa encontrada.' });
+        }
+
+        return res.json(tasks);
+    } catch (error) {
+        return res.status(500).json({ error: 'Erro ao buscar as tarefas.' });
+    }
+}
+
 }
 
 export default new TaskController(); 
