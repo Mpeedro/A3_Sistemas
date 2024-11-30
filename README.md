@@ -15,7 +15,7 @@ Este é um projeto de uma API RESTful que segue o padrão MVC. Foi criado para p
 ### Usuário
 - Fazer login.
 - Criar uma conta.
-- Alterar suas informações.
+
 
 ### Tarefas
 - Criar uma nova tarefa.
