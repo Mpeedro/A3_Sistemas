@@ -1,3 +1,5 @@
+//Define a conexão com banco de dados
+
 module.exports = {
     dialect: 'postgres',
     host: '136.248.92.91',

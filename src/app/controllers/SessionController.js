@@ -38,3 +38,15 @@ class SessionController{
 
 
 export default new SessionController();
+
+/*
+  Controller para gerenciar sessões de usuário (SessionController):
+
+  - `store`: Cria uma nova sessão de usuário (login).
+    1. Recebe o `email` e `password` do corpo da requisição.
+    2. Verifica se o usuário existe pelo `email` (usando o método `findOne`).
+    3. Se o usuário não existir, retorna erro 401 com a mensagem "User não existe!".
+    4. Se a senha estiver incorreta, retorna erro 401 com a mensagem "Senha errada!".
+    5. Se o usuário e a senha estiverem corretos, gera um token JWT com o ID do usuário.
+    6. Retorna o usuário (id, name, email) e o token gerado no formato JSON.
+*/

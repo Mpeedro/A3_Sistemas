@@ -4,8 +4,16 @@ import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
 import TaskController from './app/controllers/TaskController';
 
+// Aqui estamos criando uma instância de Router, que é usada para definir as rotas da aplicação.
+
 
 const routes = new Router();
+
+/* 
+- As duas primeiras são para cadastro de usuários e login (sem precisar de autenticação). - A partir daqui, todas as rotas passam pelo middleware de autenticação (authMiddleware).
+- Depois disso, temos as rotas para CRUD de tarefas: criar, listar, atualizar e deletar.
+*/
+
 
 
 routes.post('/users', UserController.store);

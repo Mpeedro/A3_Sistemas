@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import routes from './routes';
 import './database';
+// Essa classe aqui é basicamente o coração do servidor. Ela configura o Express, 
+// define os middlewares e conecta as rotas pra tudo funcionar certinho.
+
 
 class App{
     constructor(){

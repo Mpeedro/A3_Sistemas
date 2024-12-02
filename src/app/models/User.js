@@ -1,6 +1,17 @@
 import Sequelize, { Model } from 'sequelize';
 import bcrypt from 'bcryptjs';
 
+/*
+ Esse é o modelo "User" do banco de dados, representando os usuários do sistema:
+ - Herda de `Model`, que vem do Sequelize, para usar as funcionalidades de ORM.
+ - `init`: inicializa os campos da tabela (id, name, email, password e password_hash).
+ - `password` é um campo virtual usado para receber a senha sem armazená-la diretamente.
+ - `password_hash` é o hash da senha que será salvo no banco.
+ - Um hook (`beforeSave`) é usado para gerar o hash da senha automaticamente antes de salvar.
+ - `checkPassword`: método para comparar a senha recebida com o hash armazenado.
+ */
+
+
 class User extends Model {
   static init(sequelize) {
     super.init(

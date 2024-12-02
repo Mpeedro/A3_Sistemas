@@ -85,3 +85,27 @@ class TaskController {
 }
 
 export default new TaskController(); 
+
+/*
+  Controller para gerenciar tarefas (TaskController):
+  
+  - `store`: Cria uma nova tarefa.
+    1. Valida o campo `task` com o Yup.
+    2. Verifica se o usuário existe pelo `req.user_id`.
+    3. Se tudo estiver certo, cria a tarefa vinculada ao usuário.
+    4. Retorna a tarefa criada ou um erro apropriado.
+  
+  - `index`: Lista todas as tarefas pendentes (não marcadas como concluídas) do usuário autenticado.
+  
+  - `update`: Atualiza uma tarefa pelo `task_id`.
+    1. Verifica se a tarefa existe.
+    2. Atualiza a tarefa com os dados enviados no corpo da requisição.
+    3. Retorna a tarefa atualizada.
+  
+  - `delete`: Remove uma tarefa pelo `task_id`.
+    1. Verifica se a tarefa existe.
+    2. Garante que a tarefa pertence ao usuário autenticado.
+    3. Exclui a tarefa e retorna uma resposta de sucesso (sem conteúdo).
+  
+  - `listAll`: Lista todas as tarefas (pendentes e concluídas) do usuário autenticado.
+*/
